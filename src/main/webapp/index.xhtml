@@ -13,7 +13,7 @@
                  <h1><h:outputText value="Categorias"/></h1>
                  <div>
                      <p:selectBooleanCheckbox id="chkUsados" value="#{categoriaBean.activo}" itemLabel="Motrar los no utilizados" >
-                         <p:ajax update="@all" listener="#{categoriaBean.chkCambio()}"/>
+                         <p:ajax update="@all" listener="#{categoriaBean.chkFiltro()}"/>
                     </p:selectBooleanCheckbox>
                 </div>
                  <p:dataTable value="#{categoriaBean.lista}" var="item">
@@ -52,8 +52,6 @@
              <h:form>
                  <h1><h:outputText value="Crear nuevo registro"/></h1>
                  <p:panelGrid columns="2">
-                     <p:outputLabel value="IdCategoria:" for="idCategoria" />
-                     <p:inputText id="idCategoria" value="#{categoriaBean.cat.idCategoria}" title="IdCategoria" required="true" requiredMessage="The IdCategoria field is required."/>
                      <p:outputLabel value="Nombre:" for="nombre" />
                      <p:inputText id="nombre" value="#{categoriaBean.cat.nombre}" title="Nombre" required="true" requiredMessage="The Nombre field is required."/>
                      <p:outputLabel value="Activo:" for="activo" />

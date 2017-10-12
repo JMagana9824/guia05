@@ -24,10 +24,7 @@ import sv.edu.uesocc.ingenieria.prn335_2017.datos.definiciones.Categoria;
 import sv.edu.uesocc.ingenieria.prn335_2017.datos.acceso.CategoriaFacadeLocal;
 
 
-/**
- *
- * @author kevin
- */
+
 @Named
 @ViewScoped
 public class CategoriaBean implements Serializable {
@@ -84,7 +81,7 @@ public class CategoriaBean implements Serializable {
      }
       
     }
-  public void chkCambio(){
+  public void chkFiltro(){
         if(activo == true){
             this.lista = obtenerUtilizados();
             

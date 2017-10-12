@@ -8,10 +8,7 @@ package sv.edu.uesocc.ingenieria.prn335_2017.datos.acceso;
 import java.util.List;
 import javax.persistence.EntityManager;
 
-/**
- *
- * @author kevin
- */
+
 public abstract class AbstractFacade<T> {
 
     private Class<T> entityClass;
@@ -23,7 +20,10 @@ public abstract class AbstractFacade<T> {
     protected abstract EntityManager getEntityManager();
 
     public void create(T entity) {
-        getEntityManager().persist(entity);
+        EntityManager em = getEntityManager();
+      if(em!=null){
+      em.persist(entity);
+        } 
     }
 
     public void edit(T entity) {
