@@ -113,7 +113,7 @@ public class CategoriaBean implements Serializable {
     }
     
     public void limpiarbtn(){
-    
+    cat = new Categoria();
     
     }
     
