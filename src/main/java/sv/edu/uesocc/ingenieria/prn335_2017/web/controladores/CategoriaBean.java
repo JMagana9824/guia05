@@ -69,6 +69,9 @@ public class CategoriaBean implements Serializable {
     public void setCat(Categoria cat) {
         this.cat = cat;
     }
+    /**
+     * Este metodo sirve para crear registros en la DB
+     */
  public void crear(){
      try {
          categoria.create(cat);
@@ -81,6 +84,9 @@ public class CategoriaBean implements Serializable {
      }
       
     }
+ /**
+  * Este metodo sirve para capturar la seleccion del checkbox 
+  */
   public void chkFiltro(){
         if(activo == true){
             this.lista = obtenerUtilizados();
@@ -90,6 +96,10 @@ public class CategoriaBean implements Serializable {
             
         }
     }
+  /**
+   * Este metodo sirve para obtner las categorias no utilizadas
+   * @return devuelve las categorias no utilizadas
+   */
   public List<Categoria> obtenerUtilizados() {
         List salida;
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("uesocc.edu.sv.ingenieria.prn335_webproject3_war_1.0-SNAPSHOTPU");
@@ -104,11 +114,17 @@ public class CategoriaBean implements Serializable {
         }
     }
     
+  /**
+   * Este metodo sirve para mostrar un mensaje
+   * @param Mensaje espera una variable de tipo string 
+   */
     public void showMessage(String Mensaje) {
         FacesContext context = FacesContext.getCurrentInstance();
         context.addMessage(null, new FacesMessage(Mensaje));
     }
-    
+    /**
+     * Este metodo sirve para limpiar el panel de ingresar datos
+     */
     public void limpiarbtn(){
     cat = new Categoria();
     
